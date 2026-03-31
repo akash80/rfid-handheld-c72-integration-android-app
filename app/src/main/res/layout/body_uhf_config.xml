@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:id="@+id/uhfConfigTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="UHF Reader Configuration" />
+
+    <TextView
+        android:id="@+id/uhfConfigSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="Update reader region and power, then apply the settings before scanning."
+        android:layout_marginTop="4dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/uhfRegionInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Region code (optional)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/uhfRegionInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/uhfPowerInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Power dBm"
+        android:layout_marginTop="@dimen/rfid_section_spacing">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/uhfPowerInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/uhfSaveApplyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:text="Save and apply" />
+
+    <TextView
+        android:id="@+id/uhfConfigStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="—"
+        android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

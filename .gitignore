@@ -1,0 +1,71 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for Android Studio
+.gradle/
+local.properties
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+captures/
+.buildpath
+.project
+.cxx/
+
+# Keystore files
+*.jks
+*.keystore
+
+# NDK/SDK/AVD settings
+.cxx/
+.externalNativeBuild/
+.cache/
+*.hprof
+
+# Built native files
+obj/
+*.so
+
+# Log files
+*.log
+
+# Generated files
+build/
+*/build/
+gen/
+bin/
+
+# Gradle cache
+.gradle/
+gradle-app.setting
+
+# Other IDEs
+*.swp
+*.swo
+*~
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Crashlytics/fastlane
+crashlytics-build.properties
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+
+# Google Services (do not check in your API keys)
+google-services.json
+fabric.properties
+
+# Misc
+npm-debug.log
+yarn-error.log
+
+# Exclude project planning folder
+new_app_plan/
