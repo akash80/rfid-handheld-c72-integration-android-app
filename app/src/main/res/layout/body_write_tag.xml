@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="Write tag memory" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="Scan to capture EPC, then write HEX data to a memory bank. To password-protect tags, set an Access password (8-hex, 32-bit), then lock/unlock using that password." />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Target EPC (optional)">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagEpcInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/writeTagScanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Scan nearest tag" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Current access password (HEX, optional)">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagAccessPwdInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Bank (RESERVED / EPC / TID / USER)">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagBankInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Word ptr">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagWordPtrInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Data (HEX)">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagDataInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/writeTagWriteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:text="Write" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="Password &amp; lock" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="New access password (HEX, 8 chars)">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagNewAccessPwdInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/writeTagSetPwdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Set access password" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/writeTagLockButton"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Lock" />
+
+      <View
+          android:layout_width="12dp"
+          android:layout_height="1dp" />
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/writeTagUnlockButton"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Unlock" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/writeTagStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="—" />
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+

@@ -72,6 +72,13 @@ class AdminDashboardFragment : BaseScreenFragment() {
 
         val actions: List<DashboardAction> = listOf(
             DashboardAction(
+                title = "Start Task List",
+                subtitle = "Open the task launcher and pick a workflow",
+                iconRes = android.R.drawable.ic_menu_agenda,
+                enabled = true,
+                onClick = { findNavController().navigate(R.id.action_adminDashboard_to_inventorySyncFragment) }
+            ),
+            DashboardAction(
                 title = "Inventory Sync",
                 subtitle = "Start or resume a stock take session",
                 iconRes = android.R.drawable.ic_menu_recent_history,
@@ -126,6 +133,20 @@ class AdminDashboardFragment : BaseScreenFragment() {
                 iconRes = android.R.drawable.ic_menu_manage,
                 enabled = true,
                 onClick = { findNavController().navigate(R.id.action_adminDashboard_to_uhfConfigFragment) }
+            ),
+            DashboardAction(
+                title = "Read Tag",
+                subtitle = "Scan and read EPC/TID/USER memory",
+                iconRes = android.R.drawable.ic_menu_view,
+                enabled = true,
+                onClick = { findNavController().navigate(R.id.action_adminDashboard_to_readTagFragment) }
+            ),
+            DashboardAction(
+                title = "Write Tag",
+                subtitle = "Write tag data and manage password lock",
+                iconRes = android.R.drawable.ic_menu_edit,
+                enabled = true,
+                onClick = { findNavController().navigate(R.id.action_adminDashboard_to_writeTagFragment) }
             ),
             DashboardAction(
                 title = "Role Management",

@@ -112,6 +112,12 @@
         <action
             android:id="@+id/action_adminDashboard_to_uhfConfigFragment"
             app:destination="@id/uhfConfigFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_readTagFragment"
+            app:destination="@id/readTagFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_writeTagFragment"
+            app:destination="@id/writeTagFragment" />
     </fragment>
 
     <fragment
@@ -222,6 +228,16 @@
         android:id="@+id/uhfConfigFragment"
         android:name="com.rfidsoftwares.ui.screens.UhfConfigFragment"
         android:label="UHF Config" />
+
+    <fragment
+        android:id="@+id/readTagFragment"
+        android:name="com.rfidsoftwares.ui.screens.ReadTagFragment"
+        android:label="Read Tag" />
+
+    <fragment
+        android:id="@+id/writeTagFragment"
+        android:name="com.rfidsoftwares.ui.screens.WriteTagFragment"
+        android:label="Write Tag" />
 
 </navigation>
 
